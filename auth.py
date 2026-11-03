@@ -7,6 +7,7 @@ auth_bp = Blueprint("auth", _name_)
 ADMIN_USERNAME = "admin"
 ADMIN_PASSWORD_HASH = generate_password_hash("Admin@12345")
 
+
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
