@@ -17,6 +17,7 @@
             <th>Department</th>
             <th>Designation</th>
             <th>Salary</th>
+            <th>Actions</th>
         </tr>
 
         {% for employee in employees %}
@@ -27,6 +28,15 @@
             <td>{{ employee.department }}</td>
             <td>{{ employee.designation }}</td>
             <td>{{ employee.salary }}</td>
+            <td>
+    <a href="{{ url_for('employees.edit_employee', id=employee.id) }}">Edit</a>
+
+    <form method="POST" action="{{ url_for('employees.delete_employee', id=employee.id) }}">
+        <button type="submit" onclick="return confirm('Delete this employee?')">
+            Delete
+        </button>
+    </form>
+</td>
         </tr>
         {% endfor %}
     </table>
