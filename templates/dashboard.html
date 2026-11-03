@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Employee Management Dashboard</h1>
+
+    <h2>Welcome, Admin!</h2>
+
+    <div>
+        <h3>Total Employees</h3>
+        <p>{{ total_employees }}</p>
+    </div>
+
+    <div>
+        <h3>Departments</h3>
+        <p>{{ total_departments }}</p>
+    </div>
+
+    <a href="{{ url_for('employees.employee_list') }}">Manage Employees</a>
+    <a href="{{ url_for('employees.add_employee') }}">Add New Employee</a>
+</body>
+</html>
