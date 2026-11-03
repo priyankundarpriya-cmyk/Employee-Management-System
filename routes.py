@@ -1,10 +1,21 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash
+from flask import Blueprint, render_template, request, redirect, url_for, flash, session
+from functools import wraps
 from models import db, Employee
 
 employee_bp = Blueprint("employees", _name_)
 
 
+def admin_required(function):
+    @wraps(function)
+    def wrapper(*args, **kwargs):
+        if "admin" not in session:
+            return redirect(url_for("auth.login"))
+        return function(*args, **kwargs)
+    return wrapper
+
+
 @employee_bp.route("/")
+@admin_required
 def dashboard():
     total_employees = Employee.query.count()
     total_departments = db.session.query(
@@ -19,12 +30,14 @@ def dashboard():
 
 
 @employee_bp.route("/employees")
+@admin_required
 def employee_list():
     employees = Employee.query.all()
     return render_template("employees.html", employees=employees)
 
 
 @employee_bp.route("/employees/add", methods=["GET", "POST"])
+@admin_required
 def add_employee():
     if request.method == "POST":
         try:
@@ -50,6 +63,7 @@ def add_employee():
 
 
 @employee_bp.route("/employees/edit/<int:id>", methods=["GET", "POST"])
+@admin_required
 def edit_employee(id):
     employee = Employee.query.get_or_404(id)
 
@@ -69,6 +83,7 @@ def edit_employee(id):
 
 
 @employee_bp.route("/employees/delete/<int:id>", methods=["POST"])
+@admin_required
 def delete_employee(id):
     employee = Employee.query.get_or_404(id)
 
