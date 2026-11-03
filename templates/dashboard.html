@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+
     <h1>Employee Management Dashboard</h1>
 
     <h2>Welcome, Admin!</h2>
@@ -15,11 +16,15 @@
     </div>
 
     <div>
-        <h3>Departments</h3>
+        <h3>Total Departments</h3>
         <p>{{ total_departments }}</p>
     </div>
 
     <a href="{{ url_for('employees.employee_list') }}">Manage Employees</a>
+
     <a href="{{ url_for('employees.add_employee') }}">Add New Employee</a>
+
+    <a href="{{ url_for('auth.logout') }}">Logout</a>
+
 </body>
 </html>
