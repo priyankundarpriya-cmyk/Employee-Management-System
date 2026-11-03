@@ -1,14 +1,11 @@
 from flask import Flask
+from config import Config
 from models import db
 from routes import employee_bp
 
 app = Flask(_name_)
 
-app.config["SECRET_KEY"] = "change-this-secret-key"
-app.config["SQLALCHEMY_DATABASE_URI"] = (
-    "mysql+pymysql://root:password@localhost/employee_db"
-)
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+app.config.from_object(Config)
 
 db.init_app(app)
 
