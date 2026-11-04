@@ -58,6 +58,7 @@ Author
 
 Priya N Kundar
 
+
 ## Project Screenshots
 
 ### Dashboard
@@ -71,5 +72,3 @@ Priya N Kundar
 
 ### Edit Employee
 ![Edit Employee](screenshots/edit_employee.png)
-
-
