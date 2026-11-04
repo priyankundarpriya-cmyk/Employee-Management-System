@@ -62,13 +62,14 @@ Priya N Kundar
 ## Project Screenshots
 
 ### Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](Screenshots/dashboard.png)
 
 ### Add Employee
-![Add Employee](screenshots/add_employee.png)
+![Add Employee](Screenshots/add_employee.png)
 
 ### Employee List
-![Employee List](screenshots/employee_list.png)
+![Employee List](Screenshots/employee_list.png)
 
 ### Edit Employee
-![Edit Employee](screenshots/edit_employee.png)
+![Edit Employee](Screenshots/edit_employee.png)
+
