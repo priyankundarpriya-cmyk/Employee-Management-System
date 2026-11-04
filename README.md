@@ -57,3 +57,19 @@ This project demonstrates Python Flask development, database operations, CRUD fu
 Author
 
 Priya N Kundar
+
+## Project Screenshots
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Add Employee
+![Add Employee](screenshots/add_employee.png)
+
+### Employee List
+![Employee List](screenshots/employee_list.png)
+
+### Edit Employee
+![Edit Employee](screenshots/edit_employee.png)
+
+
